@@ -1,0 +1,155 @@
+.cta {
+  padding: 5rem 0;
+  background: transparent;
+    text-align: center;
+  border: 2px solid #1d4ed8;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 1rem;
+  max-width: 99%;
+  text-align: center;
+  margin: 2rem auto;
+}
+.cta:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    border: 2px solid #1d4ed8;
+}
+
+.cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.cta p {
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+
+}
+.btn-primary, .btn-secondary {
+  padding: 0.75rem 2rem;
+  background: #1d4ed8;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  border: 1px solid #1d4ed8;
+}
+
+.btn-primary:hover {
+  background: white;
+  border-color: #1e40af;
+}
+
+@media (max-width: 768px) {
+  .cta {
+    padding: 4rem 1.5rem;
+    text-align: center;
+    border-radius: 20px; /* Modern curved edges */
+    margin: 1 1rem;
+    background: transparent;
+    border: 2px solid #1d4ed8;
+
+  }
+
+  .cta h2 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color:#1d4ed8;
+  }
+
+  .cta p {
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    opacity: 1;
+  }
+
+  /* Buttons Stacked for Easy Tapping */
+  .cta-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    width: 100%;
+  }
+
+  /* Common Button Styling for Mobile */
+  .cta-buttons .btn-primary, 
+  .cta-buttons .btn-secondary {
+    width: 100%;
+    max-width: 320px; /* Thumb range width */
+    padding: 1.1rem;
+    font-size: 1.1rem;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  /* Primary Button with Pulse Effect */
+  .cta-buttons .btn-primary {
+    background: rgba(171, 168, 168, 0.7);
+    color: #1d4ed8;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    animation: ctaPulse 2s infinite;
+  }
+
+  /* Secondary Button with Glass Effect */
+  .cta-buttons .btn-secondary {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #1d4ed8;
+    backdrop-filter: blur(5px);
+  }
+
+  /* Tap Effect: Squeeze when touched */
+  .cta-buttons .btn-primary:active,
+  .cta-buttons .btn-secondary:active {
+    transform: scale(0.96);
+  }
+}
+
+@media (max-width: 480px) {
+  .cta {
+    padding: 3.5rem 1.2rem;
+  }
+
+  .cta h2 {
+    font-size: 1.85rem; /* Better scaling for small phones */
+  }
+
+  .cta p {
+    font-size: 1rem;
+  }
+
+  .cta-buttons .btn-primary, 
+  .cta-buttons .btn-secondary {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}
+
+/* Pulse Animation for the Main Button */
+@keyframes ctaPulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
+  70% { box-shadow: 0 0 0 15px rgba(255, 255, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+}

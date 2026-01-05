@@ -1,0 +1,186 @@
+/* Hero Section */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+
+.hero-overlay.loaded {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    text-align: left;
+    max-width: 1200px;
+    top: 2rem;
+    z-index: 1;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    color: white;
+    text-shadow: 2px 4px rgba(0, 0, 0, 0.7);
+    animation: fadeInUp 1s ease-out;
+    width: 80%;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    color: white;
+    text-shadow: 1px 2px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1s ease-out 0.2s;
+    width: 80%;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    animation: fadeInUp 1s ease-out 0.4s;
+    margin-top: 4rem;
+}
+
+.btn-primary a {
+    background: #fff;
+    color: #2563eb;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: fadeInUp 1s ease-out 0.6s;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+}
+
+.btn-secondary a {
+    background: transparent;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    animation: fadeInUp 1s ease-out 0.6s;
+    text-decoration: none;
+}
+
+.btn-secondary a:hover {
+    background: white;
+    color: #2563eb;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    /* Overlay for text readability */
+    .hero-overlay {
+        background: rgba(0, 0, 0, 0.65);
+        align-items: center; /* Content vertically centered on mobile */
+    }
+
+    /* Text alignment change */
+    .hero-content {
+        text-align: center;
+        padding: 0 1rem; /* Simple padding */
+        max-width: 100%;
+    }
+
+    /* Responsive Font Size for H1 */
+    .hero h1 {
+        font-size: 2.5rem;
+        width: 100%;
+        margin-bottom: 1rem;
+        text-shadow: none; /* Keep it simple, no shadows */
+    }
+
+    /* Responsive Font Size for P */
+    .hero p {
+        font-size: 1rem;
+        width: 100%;
+        margin-bottom: 2rem;
+        text-shadow: none;
+        background: rgba(255, 255, 255, 0.1);
+        
+    }
+
+    /* Stacked Buttons for Easy Tapping */
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center; /* Center align the stacked buttons */
+        gap: 1rem;
+        width: 100%;
+        max-width: 300px; /* Buttons have a max width */
+        margin: 0 auto; /* Center the buttons container */
+    }
+    
+    /* Make buttons full width inside the container */
+    .btn-primary a, .btn-secondary a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 0.8rem 1rem;
+        border-radius: 8px; /* Slightly less aggressive radius */
+        font-size: 1rem;
+    }
+
+    .btn-secondary a {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+}
+
+/* Small Mobile Adjustments */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero p {
+        font-size: 0.9rem;
+    }
+}
