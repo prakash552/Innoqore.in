@@ -20,7 +20,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.6) 100%);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.9) 100%);
     z-index: 1;
 }
 
@@ -76,8 +76,10 @@
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    gap: 4rem;
     margin-bottom: 3rem;
+    max-width: 1200px;
+    padding: 2rem;
 }
 
 .service-card {
@@ -88,8 +90,8 @@
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
     border: 2px solid transparent;
-    height: auto;
-    min-height: 250px;
+    
+    max-height: 100px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -439,200 +441,111 @@
     }
 }
 
-@media (max-width: 768px) {
-    .slider-container {
-        margin: 0 -1rem;
-        padding: 0 1rem;
-    }
-    
-    .service-card {
-        flex: 0 0 95%;
-        padding: 2rem;
-        min-height: 200px;
-        width: 80%;
-        margin: 0 auto;
-    }
-    
-    .slider-nav-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
-    }
-    
-    .prev-btn {
-        left: -20px;
-    }
-    
-    .next-btn {
-        right: -20px;
-    }
-    .slider-container{
-    width: 100%;
-    margin: 0 auto;
-    }
-}
-
-@media (max-width: 480px) {
-    .slider-nav-btn {
-        width: 35px;
-        height: 35px;
-        font-size: 1rem;
-    }
-    
-    .prev-btn {
-        left: -17px;
-    }
-    
-    .next-btn {
-        right: -17px;
-    }
-    
-    .service-card {
-        padding: 0.5rem;
-        width: 0px;
-        right: 90px;
-        
-top: 20px;
-
-    }
-    
-    .service-icon {
-        font-size: 2rem;
-    }
-    
-    .service-card h3 {
-        font-size: 1rem;
-    }
-    
-    .service-card p {
-        font-size: 0.8rem;
-        line-height: 1.4;
-        
-
-
-    }
-}
-
-/* Services CTA */
-.services-cta {
-    padding: 5rem 0;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    text-align: center;
-}
-
-.services-cta h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.services-cta p {
-    font-size: 1.125rem;
-    max-width: 600px;
-    margin: 0 auto 2rem;
-    opacity: 0.9;
-}
-
-.cta-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-}
-
-.btn-primary {
-    background: #fff;
-    color: #2563eb;
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
-
-.btn-secondary {
-    background: transparent;
-    color: white;
-    border: 2px solid white;
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.3s, color 0.3s;
-}
-
-.btn-secondary:hover {
-    background: white;
-    color: #2563eb;
-}
-
-/* Responsive Design */
+/* Tablet and Mobile (768px and below) */
 @media (max-width: 768px) {
     .services-hero-content h1 {
         font-size: 2.5rem;
     }
 
     .services-grid {
-        grid-template-columns: 1fr;
-       
-    }
-
-    .additional-services-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
-    }
-
-    .process-steps {
         grid-template-columns: repeat(2, 1fr);
+        padding: 0 10px;
+        margin-left: 20px;
+    }
+
+    .service-card {
+        flex: 0 0 100%;
+        padding: 2rem;
+        min-height: 200px;
+        width: 100%;
+        margin: 0 -20px;
+    
+    }
+
+    .additional-services .service-card {
+        margin: 0 -15px;
+        padding: 1.5rem;
+    }
+
+    .slider-container {
+        width: 100%;
+        margin: 0 auto;
+        gap: 1rem;
+        height: 200px;
+    }
+
+    .slider-nav-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .prev-btn {
+        left: -20px;
+    }
+
+    .next-btn {
+        right: -20px;
     }
 
     .industries-grid {
         grid-template-columns: repeat(2, 1fr);
-    }
-
-    .pricing-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .pricing-card.popular {
-        transform: none;
-    }
-
-    .cta-buttons {
-        flex-direction: column;
-        align-items: center;
     }
 }
 
+/* Small Mobile (480px and below) */
 @media (max-width: 480px) {
-    .services-hero-content h1 {
-        font-size: 2rem;
-    }
-
-    .section-header h2 {
-        font-size: 2rem;
-    }
-
-    .additional-services-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .process-steps {
-        grid-template-columns: 1fr;
-    }
-
-    .industries-grid {
-        grid-template-columns: 1fr;
-    }
-
+    .services-hero-content h1,
+    .section-header h2,
     .services-cta h2 {
         font-size: 2rem;
     }
-}
+
+    .services-grid{
+        gap: 1.5rem;
+    }
+    .service-card {
+        padding: 0.5rem;
+        width: 0px; /* Note: width 0 might hide content, adjust if needed */
+        right: 90px;
+        top: 20px;
+    }
+
+    .service-icon {
+        font-size: 2rem;
+    }
+
+    .service-card h3 {
+        font-size: 1rem;
+    }
+
+    .service-card p {
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+
+    .slider-nav-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+
+    .prev-btn {
+        left: -17px;
+    }
+
+    .next-btn {
+        right: -17px;
+    }
+
+    .process-steps {
+        grid-template-columns: 1fr;
+    }
+
+    .industries-grid {
+        grid-template-columns: 1fr; /* Changed from 2fr to 1fr for standard mobile stacking */
+    }
+    .additional-services .service-card {
+        gap: 0.5rem; /* छोटे स्क्रीन के लिए एक छोटा गैप */
+    }
+}    
